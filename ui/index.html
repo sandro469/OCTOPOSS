@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCTOPOSS | Blue Team Evidence Center</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+<div>
+<h1>🐙 OCTOPOSS</h1>
+<span>BLUE TEAM EVIDENCE CENTER</span>
+</div>
+<div class="status">
+<span class="status-dot"></span>
+SISTEMA OPERACIONAL
+</div>
+</header>
+<main>
+<section class="cards">
+<div class="card">
+<h2>PROCESSOS</h2>
+<strong>24</strong>
+<span>processos observados</span>
+</div>
+<div class="card">
+<h2>SERVIÇOS</h2>
+<strong>13</strong>
+<span>serviços analisados</span>
+</div>
+<div class="card">
+<h2>REDE</h2>
+<strong>08</strong>
+<span>evidências de rede</span>
+</div>
+<div class="card">
+<h2>AUTH</h2>
+<strong>12</strong>
+<span>eventos de autenticação</span>
+</div>
+</section>
+<section class="evidence">
+<div class="section-title">
+<h2>🕷️ TEIA DE EVIDÊNCIAS</h2>
+<span>Correlação de eventos</span>
+</div>
+<div class="web">
+<div class="node">PROCESSO</div>
+<div class="arrow">↓</div>
+<div class="node">SERVIÇO</div>
+<div class="arrow">↓</div>
+<div class="node">SOCKET</div>
+<div class="arrow">↓</div>
+<div class="node">LOG</div>
+<div class="arrow">↓</div>
+<div class="node highlight">CORRELAÇÃO</div>
+</div>
+</section>
+<section class="investigation">
+<div class="section-title">
+<h2>🔎 STATUS DA INVESTIGAÇÃO</h2>
+<span>Últimos eventos</span>
+</div>
+<div class="event normal">
+<span>🟢</span>
+<div>
+<strong>systemd-resolved</strong>
+<p>Serviço DNS identificado e correlacionado.</p>
+</div>
+</div>
+<div class="event warning">
+<span>🟡</span>
+<div>
+<strong>UDP/323</strong>
+<p>Socket local encontrado. Processo proprietário não identificado.</p>
+</div>
+</div>
+<div class="event normal">
+<span>🟢</span>
+<div>
+<strong>wsl-pro.service</strong>
+<p>Serviço identificado e associado ao Ubuntu Pro.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+OCTOPOSS • Evidence First • Blue Team
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

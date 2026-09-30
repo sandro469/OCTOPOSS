@@ -1,0 +1,5 @@
+evidence_backup/
+logs/
+__pycache__/
+*.pyc
+evidence/auth.log
