@@ -1,0 +1,6 @@
+=== OCTOPOSS - ANALISE PAM LASTLOG ===
+Arquivo: /etc/pam.d/login
+Pacote: login
+Hash esperado: d10e26d07799aaa674a125e89d525c39
+Hash atual: d10e26d07799aaa674a125e89d525c39
+Conclusao: arquivo corresponde ao hash registrado pelo pacote; pam_lastlog.so nao esta presente nos modulos instalados.

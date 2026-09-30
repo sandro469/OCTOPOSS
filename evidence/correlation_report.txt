@@ -1,0 +1,23 @@
+=== OCTOPOSS - TEIA DE EVIDENCIAS ===
+
+[CORRELACAO 01] DNS
+Processo: systemd-resolved
+PID: 158
+Servico: systemd-resolved.service
+Sockets DNS encontrados:
+- udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=16))
+- udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=14))
+- tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=15))
+- tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=17))
+Relacao: PROCESSO -> SERVICO -> PORTA
+Status: CORRELACAO CONFIRMADA
+
+[CORRELACAO 02] SINCRONIZACAO DE TEMPO
+Processo: systemd-timesyncd
+PID: 159
+Servico: systemd-timesyncd.service
+Log de sincronizacao encontrado:
+- Comunicacao com servidor NTP registrada
+- Sincronizacao inicial do relogio registrada
+Relacao: PROCESSO -> SERVICO -> LOG
+Status: CORRELACAO CONFIRMADA

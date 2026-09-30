@@ -1,0 +1,7 @@
+     15 root
+      9 suario
+      1 systemd-timesync
+      1 systemd-resolve
+      1 syslog
+      1 polkitd
+      1 messagebus
