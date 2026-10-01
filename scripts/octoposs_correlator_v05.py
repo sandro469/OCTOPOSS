@@ -116,6 +116,20 @@ def analisar_sockets(sockets):
     return resultados
 
 
+def classificar_socket_orfao(socket, processos, servicos, timesync_logs):
+    porta = re.findall(r":(\d+)(?:\s|$)", socket)
+    if not porta:
+        return "EVIDENCIA INSUFICIENTE", "Porta nao identificada"
+
+    porta = porta[-1]
+
+    if porta == "323":
+        if "systemd-timesyncd" in processos and "systemd-timesyncd.service" in servicos and "timesyncd" in timesync_logs:
+            return "CORRELACAO PARCIAL", "Timesyncd confirmado, mas os logs indicam NTP na porta 123"
+
+    return "EVIDENCIA INSUFICIENTE", "Nenhum vinculo direto encontrado"
+
+
 def main():
 
     print("=== OCTOPOSS - TEIA DE EVIDENCIAS ===")
@@ -129,6 +143,7 @@ def main():
     processos_por_pid = extrair_processos(processos)
 
     confirmadas = 0
+    parciais = 0
     insuficientes = 0
 
     relatorio = []
@@ -406,22 +421,53 @@ def main():
     ]
 
     # ----------------------------------------------------------
+    # CORRELACAO 05 - INVESTIGACAO DOS SOCKETS ORFAOS
+    # ----------------------------------------------------------
+
+    print("[CORRELACAO 05] INVESTIGACAO DOS SOCKETS ORFAOS")
+
+    for item in sem_processo:
+        status_orfao, motivo = classificar_socket_orfao(
+            item["socket"],
+            processos,
+            servicos,
+            timesync_logs
+        )
+
+        print()
+        print("Socket:", item["socket"])
+        print("Status:", status_orfao)
+        print("Evidencia:", motivo)
+
+        if status_orfao == "CORRELACAO PARCIAL":
+            parciais += 1
+        else:
+            insuficientes += 1
+
+        relatorio += [
+            "[CORRELACAO 05] SOCKET ORFAO",
+            f"Socket: {item['socket']}",
+            f"Status: {status_orfao}",
+            f"Evidencia: {motivo}",
+            ""
+        ]
+
+    # ----------------------------------------------------------
     # RESUMO
     # ----------------------------------------------------------
 
     print("=== RESUMO DA ANALISE ===")
-    print("Correlacoes analisadas: 4")
+    print("Correlacoes analisadas: 5")
     print("Correlacoes confirmadas:", confirmadas)
-    print(
-        "Correlacoes com evidencia insuficiente:",
-        insuficientes
-    )
+    print("Correlacoes parciais:", parciais)
+    print("Evidencias insuficientes:", insuficientes)
 
     relatorio += [
         "=== RESUMO DA ANALISE ===",
-        "Correlacoes analisadas: 4",
+        "Correlacoes analisadas: 5",
         f"Correlacoes confirmadas: {confirmadas}",
-        f"Correlacoes com evidencia insuficiente: {insuficientes}"
+        f"Correlacoes parciais: {parciais}",
+        f"Evidencias insuficientes: {insuficientes}"
     ]
 
     saida = EVIDENCE / "correlation_report.txt"
