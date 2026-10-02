@@ -1,5 +1,5 @@
 console.log("🐙 OCTOPOSS UI carregada.");
-console.log("🕷️ Teia de Evidências operacional.");
+console.log("🕷️ Tentáculos de Evidências operacional.");
 
 async function carregarEvidencias() {
     try {

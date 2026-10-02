@@ -149,7 +149,7 @@ def classificar_socket_orfao(socket, processos, servicos, timesync_logs):
 
 def main():
 
-    print("=== OCTOPOSS - TEIA DE EVIDENCIAS ===")
+    print("=== OCTOPOSS - TENTACULOS DE EVIDENCIAS ===")
     print()
 
     processos = ler_evidencia("processes.txt")
