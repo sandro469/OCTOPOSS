@@ -49,7 +49,28 @@ Sockets sem processo identificado:
 Relacao: SOCKET -> PROCESSO -> PID
 Status: ANALISE CONCLUIDA
 
+[CORRELACAO 05] SOCKET ORFAO
+Socket: udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: udp   UNCONN 0      0               [::1]:323          [::]:*
+Status: CORRELACAO PARCIAL
+Evidencia: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
 === RESUMO DA ANALISE ===
-Correlacoes analisadas: 4
+Correlacoes analisadas: 5
 Correlacoes confirmadas: 4
-Correlacoes com evidencia insuficiente: 0
+Correlacoes parciais: 4
+Evidencias insuficientes: 0
