@@ -69,8 +69,60 @@ Socket: tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*
 Status: CORRELACAO PARCIAL
 Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
+
+=== MOTOR DE CORRELACAO ===
+Relacoes registradas: 8
+Relacoes confirmadas: 3
+Relacoes parciais: 4
+Relacoes insuficientes: 0
+Analises concluidas: 1
+
+RELACOES QUE EXIGEM ATENCAO:
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+
+=== INVESTIGACOES SUGERIDAS ===
+
+[INV-001] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[INV-002] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[INV-003] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[INV-004] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
 === RESUMO DA ANALISE ===
 Correlacoes analisadas: 5
-Correlacoes confirmadas: 4
+Correlacoes confirmadas: 3
 Correlacoes parciais: 4
 Evidencias insuficientes: 0

@@ -470,7 +470,7 @@ def main():
     )
 
     if sockets_analisados:
-        confirmadas += 1
+        pass
     else:
         insuficientes += 1
 
