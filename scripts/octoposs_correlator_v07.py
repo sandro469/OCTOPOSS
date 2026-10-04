@@ -676,6 +676,12 @@ def main():
         encoding="utf-8"
     )
 
+    return {
+        "relacoes": relacoes,
+        "motor": motor,
+        "investigacoes": investigacoes
+    }
+
 
 if __name__ == "__main__":
     main()
