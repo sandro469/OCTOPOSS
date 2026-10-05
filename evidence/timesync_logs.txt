@@ -1,21 +1,23 @@
-Sep 27 11:27:01 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
-Sep 27 11:27:01 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
-Sep 27 11:27:26 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
-Sep 27 11:27:26 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
-Sep 27 11:27:31 san91 systemd-timesyncd[147]: Contacted time server 185.125.190.57:123 (ntp.ubuntu.com).
-Sep 27 11:27:31 san91 systemd-timesyncd[147]: Initial clock synchronization to Sun 2026-09-27 11:27:31.494911 -03.
-Sep 27 11:29:25 san91 systemd[1]: Stopping systemd-timesyncd.service - Network Time Synchronization...
-Sep 27 11:29:25 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
-Sep 27 11:29:25 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
-Sep 27 11:29:42 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
-Sep 27 11:29:42 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
-Sep 27 11:29:45 san91 systemd-timesyncd[121]: Contacted time server 185.125.190.56:123 (ntp.ubuntu.com).
-Sep 27 11:29:45 san91 systemd-timesyncd[121]: Initial clock synchronization to Sun 2026-09-27 11:29:45.884088 -03.
-Sep 27 13:05:32 san91 systemd[1]: Stopping systemd-timesyncd.service - Network Time Synchronization...
-Sep 27 13:05:32 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
-Sep 27 13:05:32 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
--- Boot 6bf33f5f0aa443b1aeab0e2575adba70 --
-Sep 28 09:03:52 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
-Sep 28 09:03:53 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
-Sep 28 09:05:11 san91 systemd-timesyncd[159]: Contacted time server 91.189.91.157:123 (ntp.ubuntu.com).
-Sep 28 09:05:11 san91 systemd-timesyncd[159]: Initial clock synchronization to Mon 2026-09-28 09:05:11.315214 -03.
+Oct 04 13:32:01 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
+Oct 04 13:32:01 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
+-- Boot 79ef610abfda45fa96899f4070a129ff --
+Oct 04 23:18:10 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+Oct 04 23:18:10 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+Oct 04 23:19:34 san91 systemd-timesyncd[156]: Contacted time server 185.125.190.57:123 (ntp.ubuntu.com).
+Oct 04 23:19:34 san91 systemd-timesyncd[156]: Initial clock synchronization to Sun 2026-10-04 23:19:34.555223 -03.
+Oct 05 00:44:42 san91 systemd[1]: Stopping systemd-timesyncd.service - Network Time Synchronization...
+Oct 05 00:44:42 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
+Oct 05 00:44:42 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
+-- Boot 44e7ca50974e4e13996196784006fa60 --
+Oct 05 09:05:00 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+Oct 05 09:05:00 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+Oct 05 09:06:24 san91 systemd-timesyncd[116]: Contacted time server 185.125.190.58:123 (ntp.ubuntu.com).
+Oct 05 09:06:24 san91 systemd-timesyncd[116]: Initial clock synchronization to Mon 2026-10-05 09:06:24.179654 -03.
+Oct 05 09:09:20 san91 systemd[1]: Stopping systemd-timesyncd.service - Network Time Synchronization...
+Oct 05 09:09:20 san91 systemd[1]: systemd-timesyncd.service: Deactivated successfully.
+Oct 05 09:09:20 san91 systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
+-- Boot bf1cbcdb23964b12a9bf45121a565b2e --
+Oct 05 18:45:11 san91 systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+Oct 05 18:45:11 san91 systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+Oct 05 18:46:34 san91 systemd-timesyncd[156]: Contacted time server 185.125.190.56:123 (ntp.ubuntu.com).
+Oct 05 18:46:34 san91 systemd-timesyncd[156]: Initial clock synchronization to Mon 2026-10-05 18:46:34.846435 -03.

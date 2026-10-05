@@ -64,3 +64,14 @@ coletar_comando(
     ],
     "timesync_logs.txt"
 )
+
+# 5. LOGS DE AUTENTICACAO
+coletar_comando(
+    [
+        "journalctl",
+        "--no-pager",
+        "-n",
+        "50"
+    ],
+    "auth_logs.txt"
+)
