@@ -484,7 +484,7 @@ def main():
             "processes.txt"
         ],
         status,
-        "ALTA" if len(sockets_analisados) > 0 else "BAIXA",
+        "ALTA" if len(identificados) == len(sockets_analisados) else "MEDIA" if len(identificados) > 0 else "BAIXA",
         f"{len(sockets_analisados)} socket(s) analisado(s), "
         f"{len(identificados)} com processo e "
         f"{len(sem_processo)} sem processo identificado"
