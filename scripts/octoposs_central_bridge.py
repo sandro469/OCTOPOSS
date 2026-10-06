@@ -36,3 +36,29 @@ def registrar_tentaculo_correlacao(mind):
         "status": "ONLINE",
         "description": "Motor de correlacao dos Tentaculos de Evidencias"
     })
+
+
+if __name__ == "__main__":
+    print("🐙 OCTOPOSS CENTRAL BRIDGE")
+    print("=" * 30)
+
+    mind = CentralMind()
+
+    registrar_tentaculo_correlacao(mind)
+
+    resultados = obter_resultados()
+
+    enviar_correlacoes(mind, resultados)
+    enviar_investigacoes(mind, resultados)
+
+    estado = mind.status()
+
+    print("\n🧠 CENTRAL MIND")
+    print("=" * 30)
+    print(f"status: {estado['status']}")
+    print(f"tentacles: {estado['memory']['tentacles']}")
+    print(f"evidence: {estado['memory']['evidence']}")
+    print(f"correlations: {estado['memory']['correlations']}")
+    print(f"investigations: {estado['memory']['investigations']}")
+
+    print("\n✅ BRIDGE EXECUTADO COM SUCESSO")
