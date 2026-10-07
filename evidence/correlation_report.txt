@@ -1,53 +1,59 @@
 [CORRELACAO 01] DNS
 Processo: systemd-resolved
-PID: 158
+PID: 155
 Servico: systemd-resolved.service
 Sockets DNS encontrados:
-- udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=16))
-- udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=14))
-- tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=15))
-- tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=17))
 Relacao: PROCESSO -> PID -> SERVICO -> SOCKET -> PORTA
-Status: CORRELACAO CONFIRMADA
+Status: EVIDENCIA INSUFICIENTE
 
 [CORRELACAO 02] SINCRONIZACAO DE TEMPO
 Processo: systemd-timesyncd
-PID: 159
+PID: 156
 Servico: systemd-timesyncd.service
 Log de sincronizacao encontrado
 Relacao: PROCESSO -> PID -> SERVICO -> LOG
 Status: CORRELACAO CONFIRMADA
 
 [CORRELACAO 03] PROCESSOS -> SERVICOS
-Processo: cron | PID: 168 | Servico: cron.service | Estado: active | Subestado: running
+Processo: cron | PID: 162 | Servico: cron.service | Estado: active | Subestado: running
 Processo: systemd-journald | PID: 42 | Servico: systemd-journald.service | Estado: active | Subestado: running
-Processo: systemd-logind | PID: 182 | Servico: systemd-logind.service | Estado: active | Subestado: running
-Processo: systemd-resolved | PID: 158 | Servico: systemd-resolved.service | Estado: active | Subestado: running
-Processo: systemd-timesyncd | PID: 159 | Servico: systemd-timesyncd.service | Estado: active | Subestado: running
-Processo: systemd-udevd | PID: 97 | Servico: systemd-udevd.service | Estado: active | Subestado: running
+Processo: systemd-logind | PID: 173 | Servico: systemd-logind.service | Estado: active | Subestado: running
+Processo: systemd-resolved | PID: 155 | Servico: systemd-resolved.service | Estado: active | Subestado: running
+Processo: systemd-timesyncd | PID: 156 | Servico: systemd-timesyncd.service | Estado: active | Subestado: running
+Processo: systemd-udevd | PID: 93 | Servico: systemd-udevd.service | Estado: active | Subestado: running
 Mapeamentos encontrados: 6
 Relacao: PROCESSO -> PID -> SERVICO
 Status: CORRELACAO CONFIRMADA
 
 [CORRELACAO 04] SOCKETS
 Sockets analisados: 8
-Com processo identificado: 4
-Sem processo identificado: 4
+Com processo identificado: 0
+Sem processo identificado: 8
 
 Sockets com processo:
-- Processo: systemd-resolve | PID: 158 | Socket: udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=16))
-- Processo: systemd-resolve | PID: 158 | Socket: udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=14))
-- Processo: systemd-resolve | PID: 158 | Socket: tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=15))
-- Processo: systemd-resolve | PID: 158 | Socket: tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=158,fd=17))
 
 Sockets sem processo identificado:
+- udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*
+- udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*
 - udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*
 - udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*
 - udp   UNCONN 0      0               [::1]:323          [::]:*
 - tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*
+- tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*
+- tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*
 
 Relacao: SOCKET -> PROCESSO -> PID
 Status: ANALISE CONCLUIDA
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
 [CORRELACAO 05] SOCKET ORFAO
 Socket: udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*
@@ -69,15 +75,40 @@ Socket: tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*
 Status: CORRELACAO PARCIAL
 Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
+[CORRELACAO 05] SOCKET ORFAO
+Socket: tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[CORRELACAO 05] SOCKET ORFAO
+Socket: tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*
+Status: CORRELACAO PARCIAL
+Evidencia: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
 
 === MOTOR DE CORRELACAO ===
-Relacoes registradas: 8
-Relacoes confirmadas: 3
-Relacoes parciais: 4
-Relacoes insuficientes: 0
+Relacoes registradas: 12
+Relacoes confirmadas: 2
+Relacoes parciais: 8
+Relacoes insuficientes: 1
 Analises concluidas: 1
 
 RELACOES QUE EXIGEM ATENCAO:
+- Tipo: DNS
+  Status: EVIDENCIA INSUFICIENTE
+  Confianca: BAIXA
+  Justificativa: systemd-resolved relacionado ao PID, servico e sockets DNS
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
 - Tipo: SOCKET_ORFAO
   Status: CORRELACAO PARCIAL
   Confianca: MEDIA
@@ -92,6 +123,16 @@ RELACOES QUE EXIGEM ATENCAO:
   Status: CORRELACAO PARCIAL
   Confianca: MEDIA
   Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+- Tipo: SOCKET_ORFAO
+  Status: CORRELACAO PARCIAL
+  Confianca: MEDIA
+  Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
 - Tipo: SOCKET_ORFAO
   Status: CORRELACAO PARCIAL
@@ -101,28 +142,53 @@ RELACOES QUE EXIGEM ATENCAO:
 
 === INVESTIGACOES SUGERIDAS ===
 
-[INV-001] SOCKET_ORFAO
+[INV-001] DNS
 Status: ABERTA
-Confianca: MEDIA
-Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+Confianca: BAIXA
+Justificativa: systemd-resolved relacionado ao PID, servico e sockets DNS
 
 [INV-002] SOCKET_ORFAO
 Status: ABERTA
 Confianca: MEDIA
-Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
 [INV-003] SOCKET_ORFAO
 Status: ABERTA
 Confianca: MEDIA
-Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
 [INV-004] SOCKET_ORFAO
 Status: ABERTA
 Confianca: MEDIA
 Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
 
+[INV-005] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[INV-006] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Timesyncd confirmado, mas o socket usa porta 323 enquanto os logs indicam NTP na porta 123
+
+[INV-007] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[INV-008] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
+[INV-009] SOCKET_ORFAO
+Status: ABERTA
+Confianca: MEDIA
+Justificativa: Servico DNS confirmado, mas nao foi encontrado vinculo direto entre este socket e um PID
+
 === RESUMO DA ANALISE ===
 Correlacoes analisadas: 5
-Correlacoes confirmadas: 3
-Correlacoes parciais: 4
-Evidencias insuficientes: 0
+Correlacoes confirmadas: 2
+Correlacoes parciais: 8
+Evidencias insuficientes: 1
