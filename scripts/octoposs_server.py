@@ -105,10 +105,10 @@ PORTA = 3000
 
 print("🐙 OCTOPOSS SERVER")
 print("=" * 30)
-print(f"UI: http://127.0.0.1:{PORTA}")
+print(f"UI: http://0.0.0.0:{PORTA}")
 print(f"Pasta UI: {UI}")
 print("Servidor local ativo.")
 print("Pressione CTRL+C para encerrar.")
 
-servidor = HTTPServer(("127.0.0.1", PORTA), OctopossHandler)
+servidor = HTTPServer(("0.0.0.0", PORTA), OctopossHandler)
 servidor.serve_forever()
