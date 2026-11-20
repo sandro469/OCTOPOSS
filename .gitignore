@@ -1,5 +1,11 @@
+# Evidencias locais - nao publicar
+evidence/
 evidence_backup/
 logs/
+
+# Arquivos temporarios Python
 __pycache__/
 *.pyc
-evidence/auth.log
+
+# Arquivos de backup locais
+.gitignore.backup
